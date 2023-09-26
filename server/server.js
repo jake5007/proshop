@@ -1,7 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
 import connectDB from "./config/db.js";
 import productRoutes from "./routes/productRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 // middleware
 import { notFoundError, errorHandler } from "./middleware/errorMiddleware.js";
@@ -11,6 +13,17 @@ dotenv.config();
 const port = process.env.PORT || 5000;
 const app = express();
 
+// Body parser middleware
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+
+// Cookie parser middleware
+app.use(cookieParser());
+
 connectDB();
 
 app.get("/", (req, res) => {
@@ -18,6 +31,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/products", productRoutes);
+app.use("/api/users", userRoutes);
 
 app.use(notFoundError);
 app.use(errorHandler);
