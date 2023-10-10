@@ -7,3 +7,4 @@ export { default as Message } from "./Message";
 export { default as FormContainer } from "./FormContainer";
 export { default as PrivateRoute } from "./PrivateRoute";
 export { default as CheckoutSteps } from "./CheckoutSteps";
+export { default as AdminRoute } from "./AdminRoute";
