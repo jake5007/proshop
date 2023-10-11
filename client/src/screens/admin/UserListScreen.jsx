@@ -16,9 +16,9 @@ const UserListScreen = () => {
   const deleteHandler = async (userId) => {
     if (window.confirm("Are you sure you want to delete this user?")) {
       try {
-        const { data } = await deleteUser(userId);
+        await deleteUser(userId).unwrap();
         refetch();
-        toast.success(data.message);
+        toast.success("User deleted successfully");
       } catch (err) {
         toast.error(err?.data?.message || err?.error);
       }
