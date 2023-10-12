@@ -49,24 +49,23 @@ const ProductEditScreen = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    const updatedProduct = {
-      productId,
-      name,
-      price,
-      image,
-      brand,
-      category,
-      countInStock,
-      description,
-    };
+    try {
+      await updateProduct({
+        productId,
+        name,
+        price,
+        image,
+        brand,
+        category,
+        countInStock,
+        description,
+      }).unwrap();
 
-    const result = await updateProduct(updatedProduct);
-
-    if (result.error) {
-      toast.error(result.error);
-    } else {
       toast.success("Product updated");
+      refetch();
       navigate("/admin/productlist");
+    } catch (err) {
+      toast.error(err?.data?.message || err?.error);
     }
   };
 
@@ -134,6 +133,7 @@ const ProductEditScreen = () => {
                 onChange={uploadFileHandler}
               />
             </Form.Group>
+            {loadingUpload && <Loader />}
 
             <Form.Group controlId="brand" className="my-2">
               <Form.Label>Brand</Form.Label>
