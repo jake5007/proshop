@@ -1,4 +1,4 @@
-# Proshop
+# Proshop (MERN stack web app)
 
 ### Screenshot
 
