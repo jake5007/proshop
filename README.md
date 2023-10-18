@@ -15,4 +15,5 @@
 - [Express](https://expressjs.com/) - Node js web app framework
 - [MongoDB Atlas](https://www.mongodb.com/atlas/database) - For database
 - [React Bootstrap](https://react-bootstrap.netlify.app/) - For styled component
+- [React Redux](https://react-redux.js.org/) - For managing state
 
