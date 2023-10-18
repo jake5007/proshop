@@ -11,7 +11,7 @@
 ### Built with
 
 - [React](https://reactjs.org/) - JS library
-- [Node.js](https://nodejs.org/) - Node js
+- [Node.js](https://nodejs.org/) - JS runtime
 - [Express](https://expressjs.com/) - Node js web app framework
 - [MongoDB Atlas](https://www.mongodb.com/atlas/database) - For database
 - [React Bootstrap](https://react-bootstrap.netlify.app/) - For styled component
