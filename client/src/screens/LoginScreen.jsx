@@ -84,6 +84,7 @@ const LoginScreen = () => {
           </Link>
         </Col>
       </Row>
+      <Loader />
     </FormContainer>
   );
 };
